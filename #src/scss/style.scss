@@ -1,0 +1,50 @@
+@import "mixins";
+@import "fonts";
+@import "icons";
+@import "checkbox";
+
+
+$fontFamily: "OpenSans";
+$fontSize: 16;
+
+$minWidth: 320px;
+$maxWidth: 1440;
+$maxWidthContainer: 1200;
+$md1: $maxWidthContainer + 12;
+$sm: 575.98px;
+$md: 767.98px;
+$lg: 991.98px;
+$xl: 1200px;
+
+$mainColor: #3E4056;
+$whiteColor: #FFFFFF; 
+$darkGrayColor: #3E3F58;
+$lightGrayColor: #F2F2F2;
+$redColor: #F05D63;
+
+@import "null";
+@import "header";
+@import "page";
+@import "card";
+
+body {
+  background-color: $lightGrayColor;
+	color: $mainColor;
+	&._lock {
+		overflow: hidden;
+	}
+}
+
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+._container {
+  max-width: $maxWidthContainer + px;
+  padding: 0px 15px;
+  margin: 0 auto;
+}

@@ -1,0 +1,142 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  max-width: 374px;
+  height: 280px;
+  background: $whiteColor;
+  border-radius: 8px;
+  box-shadow: 0px 24px 24px rgba(0, 0, 0, 0.12);
+  @media (max-width: $xl) {
+    max-width: inherit;
+  }
+
+  &__text {
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 44px;
+    height: 100%;
+    overflow: auto;
+    @media (max-width: $md) {
+      font-size: 24px;
+      line-height: 28px;
+    }
+    @media (max-width: $sm){
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: calc(14 / 16 * 100%);
+    span {
+      display: flex;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #b2b3bb;
+      margin-right: 8px;
+    }
+  }
+
+  &__share {
+    font-size: 18px;
+    line-height: 25px;
+    color: $redColor;
+  }
+
+  &__shared-info {
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    line-height: 19px;
+    padding-bottom: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &_hashtag {
+      font-weight: 600;
+      line-height: 16px;
+      background: #ecf1f8;
+      border-radius: 6px;
+      padding: 4px;
+    }
+    &_link {
+      &::before {
+        margin-right: 4px;
+      }
+    }
+  }
+  &__count {
+    display: flex;
+    align-items: center;
+  }
+
+  &__count-view,
+  &__count-like {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 16px;
+    color: $mainColor;
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+  }
+
+  &__count-view {
+    &::before {
+      color: $mainColor;
+      margin-right: 8px;
+    }
+  }
+
+  &__count-like {
+    &::before {
+      color: $redColor;
+      margin-right: 8px;
+    }
+  }
+
+  &_no-shared {
+    .card__count {
+      display: none;
+    }
+  }
+
+  &_shared {
+    .card__share {
+      display: none;
+    }
+    .card__shared-info {
+      opacity: 1;
+    }
+  }
+
+  &_shared-link {
+    .card__shared-info_hashtag {
+      display: none;
+    }
+  }
+
+  &_shared-hashtag {
+    .card__shared-info_link {
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
